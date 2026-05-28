@@ -701,3 +701,88 @@ p { color: var(--gray-700); }
   .metrics-row { grid-template-columns: 1fr 1fr; }
   .page-header { padding: 80px 0 44px; }
 }
+
+/* ── Site Visit Carousels ────────────────────────────── */
+.site-carousel {
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 18px rgba(0,0,0,0.16);
+  background: #111;
+}
+.carousel-image-area {
+  position: relative;
+  overflow: hidden;
+}
+.carousel-track-wrap { overflow: hidden; }
+.carousel-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform;
+}
+.carousel-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  position: relative;
+}
+.carousel-slide img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+.carousel-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.62));
+  color: #fff;
+  padding: 30px 14px 10px;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  line-height: 1;
+}
+.carousel-btn:hover { background: rgba(0,0,0,0.78); }
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+.carousel-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 0 7px;
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-100);
+}
+.carousel-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gray-300);
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.carousel-dot.active {
+  background: var(--gold);
+  transform: scale(1.35);
+}
+@media (max-width: 640px) {
+  .carousel-slide img { height: 200px; }
+}
