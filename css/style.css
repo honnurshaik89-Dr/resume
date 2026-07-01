@@ -346,6 +346,9 @@ p  { color: var(--ink-2); }
 .pub-authors { font-size: 0.9rem; color: var(--ink-2); }
 .pub-authors .pub-highlight { color: var(--rust); font-weight: 600; }
 .pub-journal { font-size: 0.86rem; color: var(--ink-soft); font-style: italic; margin-top: 3px; }
+/* justified publication text — even left & right edges */
+.pub-title, .pub-authors, .pub-journal { text-align: justify; text-justify: inter-word; }
+.pub-title { hyphens: auto; overflow-wrap: break-word; }
 
 /* ===== NUMBERED ACCORDION (ref: Spots FAQ) ===== */
 .accordion { border-top: 1px solid var(--line); }
