@@ -121,7 +121,17 @@ p  { color: var(--ink-2); }
 }
 .nav-brand { display: flex; flex-direction: column; line-height: 1.1; }
 .nav-brand .name { font-family: var(--serif); font-size: 1.18rem; color: var(--ink); }
-.nav-brand .title { font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-top: 3px; }
+.nav-brand .title {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 3px;
+  color: var(--ink);
+  background: linear-gradient(105deg, var(--ink) 0%, var(--ink) 42%, #c79a3d 50%, var(--ink) 58%, var(--ink) 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: brandshine 5.5s ease-in-out infinite;
+}
+@keyframes brandshine { 0%, 100% { background-position: 150% 0; } 50% { background-position: -50% 0; } }
+@media (prefers-reduced-motion: reduce) { .nav-brand .title { -webkit-text-fill-color: var(--ink); animation: none; } }
 
 .nav-links { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
 .nav-links a {
@@ -347,8 +357,7 @@ p  { color: var(--ink-2); }
 .pub-authors .pub-highlight { color: var(--rust); font-weight: 600; }
 .pub-journal { font-size: 0.86rem; color: var(--ink-soft); font-style: italic; margin-top: 3px; }
 /* justified publication text — even left & right edges */
-.pub-title, .pub-authors, .pub-journal { text-align: justify; text-justify: inter-word; }
-.pub-title { hyphens: auto; overflow-wrap: break-word; }
+.pub-authors, .pub-journal { text-align: justify; text-justify: inter-word; }
 
 /* ===== NUMBERED ACCORDION (ref: Spots FAQ) ===== */
 .accordion { border-top: 1px solid var(--line); }
