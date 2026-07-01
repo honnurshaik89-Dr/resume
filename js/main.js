@@ -93,6 +93,32 @@ document.querySelectorAll('.card, .pub-item, .grant-card, .award-item, .timeline
   });
 }());
 
+// ── Numbered accordion ──
+document.querySelectorAll('.acc-trigger').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var item = btn.closest('.acc-item');
+    var panel = item.querySelector('.acc-panel');
+    var isOpen = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    panel.style.maxHeight = isOpen ? panel.scrollHeight + 'px' : '0';
+  });
+});
+
+// ── Scroll reveal for [data-reveal] ──
+(function () {
+  var els = document.querySelectorAll('[data-reveal]');
+  if (!('IntersectionObserver' in window) || !els.length) {
+    els.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(function (el) { io.observe(el); });
+}());
+
 // Mobile nav bar animation
 const style = document.createElement('style');
 style.textContent = `

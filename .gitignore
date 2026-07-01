@@ -1,0 +1,11 @@
+# Local Claude Code config / dev preview
+.claude/
+
+# Analysis output
+graphify-out/
+
+# Design references, screenshots, and CV source (not part of the public site)
+Website styles and screenshots/
+
+# Internal project notes
+CLAUDE.md
