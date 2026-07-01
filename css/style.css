@@ -265,7 +265,10 @@ p  { color: var(--ink-2); }
 .activity-mini:hover strong { color: var(--rust); }
 
 /* ---- Main column ---- */
-.main { min-width: 0; padding-bottom: 40px; }
+.main { min-width: 0; padding-bottom: 40px; display: flex; flex-direction: column; }
+/* bring Latest Activities upfront: intro first, then activities, then the rest */
+.main > .thesis { order: -2; }
+.main > #activities { order: -1; }
 
 /* editorial thesis / hero */
 .thesis { padding: 8px 0 8px; }
