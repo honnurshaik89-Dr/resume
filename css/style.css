@@ -339,12 +339,13 @@ p  { color: var(--ink-2); }
 
 /* ===== PUBLICATIONS list ===== */
 .pub-list { border-top: 1px solid var(--line); }
+/* Block layout (not grid) so the text column can never collapse to min-content */
 .pub-item {
-  padding: 22px 4px;
+  position: relative;
+  padding: 22px 4px 22px 58px;
   border-bottom: 1px solid var(--line);
-  display: grid; grid-template-columns: 40px 1fr; gap: 18px;
 }
-.pub-index { font-family: var(--serif); color: var(--ink-soft); padding-top: 2px; }
+.pub-index { position: absolute; left: 4px; top: 23px; font-family: var(--serif); color: var(--ink-soft); }
 .pub-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
 .pub-badge {
   font-size: 0.66rem; font-weight: 600; letter-spacing: 0.08em;
