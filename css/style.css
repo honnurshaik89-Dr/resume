@@ -168,7 +168,8 @@ p  { color: var(--ink-2); }
 
 /* ---- Profile sidebar ---- */
 .profile {
-  position: sticky; top: 100px;
+  /* scrolls with the page (not sticky) — sidebar taller than the viewport
+     would otherwise pin and hide its lower content */
   display: flex; flex-direction: column;
   padding-bottom: 40px;
 }
